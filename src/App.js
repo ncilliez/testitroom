@@ -2,14 +2,15 @@ import './App.css';
 
 import { useEffect, useState } from "react";
 
-const lang = 'french';
-const url = `https://restcountries.com/v3.1/lang/${lang}`;
-
 function App() {
-  const [table, setTable] = useState([]);
-  // const [selection, setSelection] = useState('french');
 
+  const [table, setTable] = useState([]);
+  const [lang, setLang] = useState('french');
+
+  
+  
   useEffect(() => {
+    const url = `https://restcountries.com/v3.1/lang/${lang}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -21,18 +22,18 @@ function App() {
         console.log(error);
       });
 
-  }, []);
+  }, [lang]);
 
   const select =()=>{
-    var info = document.getElementById('filtre').value
-    console.log(info)
+    let demande = document.getElementById('filtre').value
+    console.log(demande);
+    setLang(demande)
   };
-  console.log(table);
+  
   return (
     <div>
       <input type="text" id="filtre"/>
       <button onClick ={() => select()}>Valider</button>
-      
       <ul>
         {table.map((pays, i) => {
           return (
