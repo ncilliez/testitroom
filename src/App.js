@@ -22,12 +22,14 @@ function App() {
         console.log(error);
       });
 
-  }, []);
+  }, [lang]);
+
 
   const select =()=>{
     let demande = document.getElementById('filtre').value
     console.log(demande);
     setLang(demande)
+    // e.preventDefault();
   };
   
   return (
