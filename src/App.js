@@ -22,7 +22,7 @@ function App() {
         console.log(error);
       });
 
-  }, [lang]);
+  }, []);
 
   const select =()=>{
     let demande = document.getElementById('filtre').value
@@ -31,7 +31,7 @@ function App() {
   };
   
   return (
-    <div>
+    <div className='app'>
       <input type="text" id="filtre"/>
       <button onClick ={() => select()}>Valider</button>
       <ul>
