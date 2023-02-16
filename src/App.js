@@ -23,8 +23,6 @@ function App() {
 
   }, []);
 
-  
-//teste
   const select =()=>{
     var info = document.getElementById('filtre').value
     console.log(info)
